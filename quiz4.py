@@ -114,10 +114,10 @@ def solve_sudoku(board):
     # TODO: Try numbers 1-9
     for num in range(1, 10):
         if is_valid(board, row, col, num):
-            board[row][col] = num
-        if solve_sudoku(board):
-            return True
-        board[row][col] = 0
+            board[row][col] = num  
+            if solve_sudoku(board):
+                return True
+            board[row][col] = 0
     
     # TODO: If we tried all numbers and none worked, return False
     return False 
